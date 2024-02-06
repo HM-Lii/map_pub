@@ -1,0 +1,19 @@
+<launch>
+  <node name="map_pub" pkg="map_pub" type="map_pub" output="screen">
+    <param name="obs1_x1" value="10" />
+    <param name="obs1_y1" value="-5" />
+    <param name="obs1_x2" value="20" />
+    <param name="obs1_y2" value="5" />
+    <param name="obs2_x1" value="40" />
+    <param name="obs2_y1" value="-3" />
+    <param name="obs2_x2" value="50" />
+    <param name="obs2_y2" value="10" />
+    <param name="obs3_x1" value="70" />
+    <param name="obs3_y1" value="-20" />
+    <param name="obs3_x2" value="80" />
+    <param name="obs3_y2" value="-10" />
+  </node>
+  <node pkg="rviz" type="rviz" name="rviz" output="screen"
+     args="-d $(find map_pub)/rviz/map_pub.rviz" required="true">
+  </node>
+</launch>
